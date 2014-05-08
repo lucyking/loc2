@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+        <TextView
+        android:id="@+id/textView4"
+        android:typeface="serif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Release Under: GPL v2" />
+        <TextView
+        android:id="@+id/textView1"
+         android:typeface="serif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Source Code:" />
+        <TextView
+        android:id="@+id/textView2"
+         android:typeface="serif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="git@github.com:lucyking/loc.git" />
+        <TextView
+        android:id="@+id/textView3"
+         android:typeface="serif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Debug Mail:" />
+        <TextView
+        android:id="@+id/textView5"
+         android:typeface="serif"
+         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="joehisaishi1943@gmail.com" />
+
+        <TextView
+            android:id="@+id/textView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attention:"
+            android:typeface="serif" />
+        
+                <TextView
+            android:id="@+id/textView02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You should refresh the &apos;Count Times&apos; manually by clicking the &apos;Main menu&apos; ,and DO NOT let the time parameter to be blank. "
+            android:typeface="serif" />
+
+</LinearLayout>

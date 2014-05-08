@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, Main!</string>
+    <string name="app_name">useLocation3</string><string name="back">Main</string><string name="button1">Add Phone Number</string><string name="addphone">Phone</string><string name="add">About</string><string name="intervial">Intervial</string>
+    
+    
+    
+    
+    
+</resources>
