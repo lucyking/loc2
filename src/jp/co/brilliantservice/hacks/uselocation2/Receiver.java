@@ -2,7 +2,7 @@ package jp.co.brilliantservice.hacks.uselocation2;
 
 import java.util.List;
 
-import jp.co.brilliantservice.hacks.uselocation.R;
+//import jp.co.brilliantservice.hacks.uselocation.R;
 
 
 import android.content.BroadcastReceiver;
@@ -12,7 +12,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.telephony.SmsManager;
 
-import android.widget.EditText;
+//import android.widget.EditText;
 import android.widget.Toast;
 
 

@@ -45,7 +45,7 @@
             android:id="@+id/textView02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You should refresh the &apos;Count Times&apos; manually by clicking the &apos;Main menu&apos; ,and DO NOT let the time parameter to be blank. "
+            android:text="refresh the Times manually. "
             android:typeface="serif" />
 
 </LinearLayout>

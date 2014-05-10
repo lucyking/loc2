@@ -17,15 +17,15 @@ import android.widget.TextView;
 
 public class MainWithPendingIntentActivity extends Activity {
 
-//    private static final String LOG_TAG = "UseLocation";
+
 	
-	static long myminute = 5;
+	static int myminute = 0;
 	
 	
 
 	
 
-    // LocationManagerの取得
+    // LocationManager
     LocationManager mLocationManager = null;
 
     PendingIntent pendingIntent = null;
@@ -33,7 +33,7 @@ public class MainWithPendingIntentActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main); //play the init phone number
+        setContentView(R.layout.main); //display the init phone number
 		((TextView) findViewById(R.id.textView2)).setText("Count Times#:"+ Receiver.mycount);
 		((TextView) findViewById(R.id.textView3)).setText("Intervial mins#:"+ myminute);
 		((TextView) findViewById(R.id.textView1)).setText("Present  Rec#:"+ Receiver.phoneNu);
@@ -47,9 +47,9 @@ public class MainWithPendingIntentActivity extends Activity {
         pendingIntent = PendingIntent.getBroadcast(this, requestCode, intent,
                 PendingIntent.FLAG_UPDATE_CURRENT);
 
-        // LocationListenerを登録
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, myminute*60*1*1000, 0.0F,
-                pendingIntent);
+        // LocationListener
+       //  mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, myminute*60*1*1000, 0.0F,
+       //         pendingIntent);
         
 
 
@@ -121,19 +121,44 @@ public class MainWithPendingIntentActivity extends Activity {
     			@Override
     			public void onClick(View view) {
     				// TODO Auto-generated method stub
-    	    		EditText mouth=(EditText)findViewById(R.id.editText1);
-    	    		String _mouth = mouth.getText().toString();
+    	    		EditText month=(EditText)findViewById(R.id.editText1);
+    	    		String _month = "0";
+    	    		if ( month.getText().toString().length() == 0)
+    	    			_month = "0"; 
+    	    		else
+    	    			_month = month.getText().toString();
+    	    		
+    	    	
     	    		EditText day=(EditText)findViewById(R.id.editText2);
-    	    		String _day =  day.getText().toString();
+    	    		String _day = "0";
+    	    		if ( day.getText().toString().length() == 0)
+    	    			_day = "0"; 
+    	    		else
+    	    			_day = day.getText().toString();
+    	    		
     	    		EditText hour =(EditText)findViewById(R.id.editText3);
-    	    		String _hour = hour.getText().toString();
-    	    		EditText minute=(EditText)findViewById(R.id.editText4);
-    	    		String _minute = minute.getText().toString();
-    	    		long themouth =  Integer.parseInt(_mouth);
-    	    		long theday =  Integer.parseInt(_day) + 30*themouth;
-    	    		long thehour =  Integer.parseInt(_hour) + 24*theday;
+    	    		String _hour = "0";
+    	    		if ( hour.getText().toString().length() == 0)
+    	    			_hour = "0"; 
+    	    		else
+    	    			_hour = hour.getText().toString();
+    	    		
+    	    		EditText minute =(EditText)findViewById(R.id.editText4);
+    	    		String _minute = "0";
+    	    		if ( minute.getText().toString().length() == 0)
+    	    			_minute = "0"; 
+    	    		else
+    	    			_minute = minute.getText().toString();
+    	    		
+    	    		
+    	    		
+    	    		int themouth =  Integer.parseInt(_month);
+    	    		int theday =  Integer.parseInt(_day) + 30*themouth;
+    	    		int thehour =  Integer.parseInt(_hour) + 24*theday;
     	    		myminute =  Integer.parseInt(_minute) + 60*thehour;
     	    		
+    	       mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, myminute*60*1*1000, 0.0F,
+    	                    pendingIntent);
     	    		
     	    		 setContentView(R.layout.main); //play the init phone number
     	    			((TextView) findViewById(R.id.textView2)).setText("Count Times#:"+ Receiver.mycount);
@@ -159,7 +184,7 @@ public class MainWithPendingIntentActivity extends Activity {
     public void onPause() {
         super.onPause();
         mLocationManager.removeUpdates(pendingIntent);
-        // mLocationManager.removeProximityAlert(pendingIntent);
+       
     }
     
     
